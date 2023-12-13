@@ -13,7 +13,7 @@ class App:
         self.images = self.load_images()
         self.tetris = Tetris(self)
         self.text = Text(self)
-
+ 
     def load_images(self):
         files = [item for item in pathlib.Path(SPRITE_DIR_PATH).rglob('*.png') if item.is_file()]
         images = [pg.image.load(file).convert_alpha() for file in files]
