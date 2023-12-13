@@ -61,11 +61,11 @@ class App:
                 self.fast_anim_trigger = False
 
     def run(self):
+        self.bgm()
         while True:
             self.check_events()
             self.update()
             self.draw()
-            # self.bgm()
 
 
 if __name__ == '__main__':
