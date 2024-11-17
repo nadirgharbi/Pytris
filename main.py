@@ -40,8 +40,9 @@ class App:
         pg.display.flip()
 
     def bgm(self):
-        pg.mixer.music.load('bgm/03. A-Type Music (Korobeiniki).wav')
-        pg.mixer.music.play(-1)
+        if not pg.mixer.music.get_busy():
+            pg.mixer.music.load('bgm/03. A-Type Music (Korobeiniki).wav')
+            pg.mixer.music.play()
 
     def check_events(self):
         self.anim_trigger = False
