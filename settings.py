@@ -1,4 +1,5 @@
 import pygame as pg
+from resource_path import resource_path
 
 vec = pg.math.Vector2
 
@@ -6,13 +7,18 @@ FPS = 60
 FIELD_COLOR = (48, 39, 32)
 BG_COLOR = (24, 89, 117)
 
-SPRITE_DIR_PATH = 'assets/sprites'
-FONT_PATH = 'assets/font/SAUCECODEPRONERDFONT-BLACK.ttf'
+SPRITE_DIR_PATH = resource_path('assets/sprites')
+FONT_PATH = resource_path('assets/font/SAUCECODEPRONERDFONT-BLACK.ttf')
+TETRIS_ICON = resource_path("assets/tetris-icon.png")
+SPEAKER_ON_IMG = resource_path("assets/gui/Speaker-0.png")
+SPEAKER_OFF_IMG = resource_path("assets/gui/Speaker-Crossed.png")
 
-ANIM_TIME_INTERVAL = 400  # milliseconds
+BGM_SRC = resource_path('bgm/03. A-Type Music (Korobeiniki).wav')
+
+ANIM_TIME_INTERVAL = 300
 FAST_ANIM_TIME_INTERVAL = 30
 
-TILE_SIZE = 30
+TILE_SIZE = 50
 FIELD_SIZE = FIELD_W, FIELD_H = 10, 20
 FIELD_RES = FIELD_W * TILE_SIZE, FIELD_H * TILE_SIZE
 

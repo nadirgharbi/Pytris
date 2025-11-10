@@ -13,7 +13,7 @@ class Block(pg.sprite.Sprite):
         self.image = tetromino.image
         self.rect = self.image.get_rect()
 
-        self.sfx_image = self.image.copy()
+        self.sfx_image = self.image.copy() 
         self.sfx_image.set_alpha(110)
         self.sfx_speed = random.uniform(0.2, 0.6)
         self.sfx_cycles = random.randrange(6, 8)
@@ -27,7 +27,7 @@ class Block(pg.sprite.Sprite):
                 return True
 
     def sfx_run(self):
-        self.image = self.sfx_image
+        self.image = self.sfx_image 
         self.pos.y -= self.sfx_speed
         self.image = pg.transform.rotate(self.image, pg.time.get_ticks() * self.sfx_speed)
 

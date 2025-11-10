@@ -26,12 +26,6 @@ class Text:
         self.font.render_to(self.app.screen, (WIN_W * 0.65, WIN_H * 0.21),
                             text=f'{self.app.tetris.score}', fgcolor='white',
                             size=TILE_SIZE * 0.7)
-        # self.font.render_to(self.app.screen, (WIN_W * 0.65, WIN_H * 0.32),
-        #                     text='->', fgcolor='white',
-        #                     size=TILE_SIZE * 0.8)
-        # self.font.render_to(self.app.screen, (WIN_W * 0.65, WIN_H * 0.74),
-        #                     text='hello', fgcolor=(52, 152, 219),
-        #                     size=TILE_SIZE * 0.7)
 
 
 class Tetris:
@@ -100,8 +94,6 @@ class Tetris:
             self.tetromino.move(direction='right')
         elif pressed_key == pg.K_UP:
             self.tetromino.rotate()
-        elif pressed_key == pg.K_DOWN:
-            self.speed_up = True
 
     def draw_grid(self):
         for x in range(FIELD_W):
@@ -110,6 +102,8 @@ class Tetris:
                              (x * TILE_SIZE, y * TILE_SIZE, TILE_SIZE, TILE_SIZE), 1)
 
     def update(self):
+        keys = pg.key.get_pressed()
+        self.speed_up = keys[pg.K_DOWN]
         trigger = [self.app.anim_trigger, self.app.fast_anim_trigger][self.speed_up]
         if trigger:
             self.check_full_lines()
